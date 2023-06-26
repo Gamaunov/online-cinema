@@ -10,8 +10,8 @@ const Logo: FC = () => {
 			<div className="px-layout mb-10 block">
 				<Image
 					src={logo}
-					width={247}
-					height={34}
+					width={50}
+					height={20}
 					alt="online-cinema"
 					draggable={false}
 				/>

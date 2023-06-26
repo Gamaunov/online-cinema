@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
 	},
 })
 
-const MainProvider: FC = ({ children }) => {
+const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Layout>{children}</Layout>

@@ -11,15 +11,15 @@ $bar-width: 20%;
 	}
 
 	> div:first-child {
-		@apply right-0 border-r border-r-gray-800;
+		@apply left-0 border-r border-r-gray-800;
+	}
+
+	> .center {
+		@apply min-h-screen p-layout;
+		margin: 0 $bar-width;
 	}
 
 	> div:last-child {
-		@apply right-0 border-l border-r-gray-800;
-	}
-
-	.center {
-		@apply min-h-screen p-layout;
-		margin: 0 $bar-width;
+		@apply right-0 border-l border-l-gray-800;
 	}
 }
