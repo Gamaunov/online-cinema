@@ -1,5 +1,5 @@
 import { MetaNoIndex } from '.'
-import { siteName, titleMerge } from 'config/seo.config'
+import { siteName, titleMerge } from '@/configs/seo.config'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { FC } from 'react'

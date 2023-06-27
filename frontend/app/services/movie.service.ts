@@ -1,5 +1,5 @@
 import { axiosClassic } from 'api/interceptors'
-import { getMoviesUrl } from 'config/api.config'
+import { getMoviesUrl } from '@/configs/api.config'
 
 import { IMovie } from '@/shared/types/movie.types'
 

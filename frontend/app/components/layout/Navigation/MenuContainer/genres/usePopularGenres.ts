@@ -1,4 +1,4 @@
-import { getGenreUrl } from 'config/url.config'
+import { getGenreUrl } from '@/configs/url.config'
 import { useQuery } from 'react-query'
 
 import { GenreService } from '@/services/genre.service'

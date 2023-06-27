@@ -1,4 +1,4 @@
-import { getMovieUrl } from 'config/url.config'
+import { getMovieUrl } from '@/configs/url.config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'

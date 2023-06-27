@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Head from 'next/head'
-import { titleMerge } from 'config/seo.config'
+import { titleMerge } from '@/configs/seo.config'
 
 
 export const MetaNoIndex: FC<{ title?: string }> = ({ title = 'Error' }) => {
