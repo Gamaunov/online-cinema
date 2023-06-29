@@ -1,4 +1,4 @@
-import  { FC } from 'react'
+import React, { FC } from 'react'
 import { FieldError, UseFormRegister } from 'react-hook-form'
 
 import Field from '../Field'

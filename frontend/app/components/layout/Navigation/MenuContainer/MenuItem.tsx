@@ -1,11 +1,12 @@
 import cn from 'classnames'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import s from './Menu.module.scss'
-import { IMenuItem } from './menu.interface'
-import Link from 'next/link'
-import MaterialIcon from '@/components/ui/MaterialIcon'
+import { MaterialIcon } from '@/ui/icons/MaterialIcon'
+
+import styles from './Menu.module.scss'
+import { IMenuItem } from './menu.types'
 
 const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 	const { asPath } = useRouter()
@@ -13,16 +14,16 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 	return (
 		<li
 			className={cn({
-				[s.active]: asPath === item.link,
+				[styles.active]: asPath === item.link,
 			})}
 		>
-      <Link href={item.link}>
-        <div>
-          <MaterialIcon name={item.icon}/>
-          <span>{item.title}</span>
-        </div>
-      </Link>
-    </li>
+			<Link href={item.link}>
+				<a>
+					<MaterialIcon name={item.icon} />
+					<span>{item.title}</span>
+				</a>
+			</Link>
+		</li>
 	)
 }
 

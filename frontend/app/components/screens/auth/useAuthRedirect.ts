@@ -14,4 +14,3 @@ export const useAuthRedirect = () => {
 		if (user) push(redirect)
 	}, [user, redirect, push])
 }
-

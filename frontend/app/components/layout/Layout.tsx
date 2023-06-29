@@ -1,16 +1,18 @@
 import { FC } from 'react'
-import s from './Layout.module.scss'
-import Navigation from './Navigation/Navigation'
-import Sidebar from './Sidebar/Sidebar'
 
-const Layout:FC = ({children}:any) => {
-  return (
-    <div className={s.layout}>
-      <Navigation />
-      <div className={s.center}>{children}</div>
-      <Sidebar />
-    </div>
-  )
+import Sidebar from './Sidebar/Sidebar'
+import Navigation from './Navigation/Navigation'
+
+import styles from './Layout.module.scss'
+
+const Layout: FC = ({ children }) => {
+	return (
+		<div className={styles.layout}>
+			<Navigation />
+			<div className={styles.center}>{children}</div>
+			<Sidebar />
+		</div>
+	)
 }
 
 export default Layout

@@ -1,9 +1,9 @@
+import MainProvider from '../app/providers/MainProvider'
 import type { AppProps } from 'next/app'
 
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
 import '../app/assets/styles/globals.scss'
-import MainProvider from 'provders/MainProvider'
 
 type TypeAppProps = AppProps & TypeComponentAuthFields
 

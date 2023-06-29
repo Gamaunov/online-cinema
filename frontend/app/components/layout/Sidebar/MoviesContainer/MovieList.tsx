@@ -1,22 +1,23 @@
+import Link from 'next/link'
 import { FC } from 'react'
 
+import { IMovieList } from './movie.types'
 import MovieItem from './MovieItem'
-import s from './MovieList.module.scss'
-import { IMovieList } from './movie-list.interface'
-import Link from 'next/link'
 
-const MovieList: FC<IMovieList> = ({ link, movies, title }) => {
+import styles from './MovieList.module.scss'
+
+const MovieList: FC<{ list: IMovieList }> = ({
+	list: { link, movies, title },
+}) => {
 	return (
-		<div className={s.list}>
-			<div className={s.heading}>{title}</div>
-			{movies.map((movie) => (
-				<MovieItem key={movie._id} movie={movie}/>
+		<div className={styles.list}>
+			<div className={styles.heading}>{title}</div>
+			{movies.map(movie => (
+				<MovieItem key={movie._id} movie={movie} />
 			))}
-      <Link href={link}>
-        <div className={s.button}>
-          See more
-        </div>
-      </Link>
+			<Link href={link}>
+				<a className={styles.button}>See more</a>
+			</Link>
 		</div>
 	)
 }

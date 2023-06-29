@@ -1,17 +1,18 @@
-import s from './Auth.module.scss'
+import styles from './Auth.module.scss'
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import AuthFields from '@/components/shared/user/AuthFields'
+import Button from '@/components/ui/form-elements/Button'
+import Heading from '@/components/ui/heading/Heading'
+
+import { useActions } from '@/hooks/useActions'
+import { useAuth } from '@/hooks/useAuth'
 
 import { Meta } from '@/utils/meta'
 
 import { IAuthInput } from './auth.interface'
 import { useAuthRedirect } from './useAuthRedirect'
-import { useAuth } from '@/hooks/useAuth'
-import Heading from '@/components/ui/heading/Heading'
-import Button from '@/components/ui/form-elements/Button'
-import AuthFields from './AuthFields'
-import { log } from 'console'
 
 const Auth: FC = () => {
 	useAuthRedirect()
@@ -29,10 +30,7 @@ const Auth: FC = () => {
 		mode: 'onChange',
 	})
 
-	// const { login, register } = useActions()
-	const login = (data:any)=>{console.table(data);
-	(data)}
-	const register = (data:any)=>{alert(data)}
+	const { login, register } = useActions()
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === 'login') login(data)
@@ -43,12 +41,12 @@ const Auth: FC = () => {
 
 	return (
 		<Meta title="Auth">
-			<section className={s.wrapper}>
+			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Heading title="Auth" className="mb-6" />
 					<AuthFields register={registerInput} formState={formState} />
 
-					<div className={s.buttons}>
+					<div className={styles.buttons}>
 						<Button
 							type="submit"
 							onClick={() => setType('login')}
@@ -71,4 +69,3 @@ const Auth: FC = () => {
 }
 
 export default Auth
-

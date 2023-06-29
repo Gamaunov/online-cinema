@@ -2,11 +2,11 @@ import { getContentType } from 'api/api.helpers'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
+import { API_URL, getAuthUrl } from '@/configs/api.config'
 
 import { IAuthResponse } from '@/store/user/user.interface'
 
 import { removeTokensStorage, saveToStorage } from './auth.helper'
-import { API_URL, getAuthUrl } from '@/configs/api.config'
 
 export const AuthService = {
 	async register(email: string, password: string) {
